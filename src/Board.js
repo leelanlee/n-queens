@@ -120,11 +120,11 @@
       var size = this.get('n');
       // iterate over the every column
       for (var i = 0; i < size; i++) {
+        // if any column has a conflict return true
         if (hasColConflictAt(i)) {
           return true;
         }
       }
-      // if any column has a conflict return true
       return false;
     },
 
@@ -136,12 +136,12 @@
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
 
-      return false; // fixme
+      // return false; // fixme
     },
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      return false; // fixme
+      // return false; // fixme
     },
 
 

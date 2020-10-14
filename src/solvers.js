@@ -16,7 +16,37 @@
 
 
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  // toggle from rows(0) to rows(n)
+  // each row toggle a Rook from col(0) to col(n)
+  // if conflict go back to previous row and next col
+  // otherwise, move to next row
+
+  // I: current board, n for size, n for number of pieces
+  //    value for base case,
+  // O:
+  // C:
+  // E:
+
+
+
+  var board = new Board({n: n});
+
+  var solution = undefined;
+
+  var rookSolver = function (board, curRow) {
+    // iterate first row
+    if (curRow === n - 1) {
+      return board.rows();
+    }
+    for (var i = 0; i < n; i++) {
+      board.togglePiece(curRow, i);
+      if (!board.hasAnyRooksConflicts()) {
+        rookSolver(board, curRow + 1);
+      } else {
+        board.togglePiece(curRow, i);
+      }
+    }
+  };
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
