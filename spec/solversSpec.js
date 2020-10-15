@@ -17,7 +17,6 @@ describe('solvers', function() {
         expect(solutionBoard.hasAnyRooksConflicts()).to.be.equal(false);
       });
     });
-
   });
 
   describe('countNRooksSolutions()', function() {
