@@ -158,7 +158,6 @@
           return true;
         }
       }
-
       return false;
     },
 
@@ -175,7 +174,7 @@
 
       var size = this.get('n');
       for ( ; rowIndex < size && columnIndex >= 0; rowIndex++, columnIndex--) {
-        if (columnIndex < size) {
+        if (this._isInBounds(rowIndex, columnIndex)) {
           var currentRow = this.get(rowIndex);
           count += currentRow[columnIndex];
         }
@@ -186,13 +185,11 @@
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
       var size = this.get('n');
-
       for (var i = 2 * size - 1; i >= 0; i--) {
         if (this.hasMinorDiagonalConflictAt(i)) {
           return true;
         }
       }
-
       return false;
     }
 
